@@ -1,0 +1,15 @@
+FROM python:3.7-alpine
+MAINTAINER Jan Janak <janakj@cs.columbia.edu>
+
+RUN apk update         \
+ && apk add            \
+    libc-dev           \
+    linux-headers      \
+    gcc
+
+RUN pip install --upgrade pip
+
+ADD src /autoprov
+
+WORKDIR /autoprov
+RUN pip3.7 install -r requirements.txt

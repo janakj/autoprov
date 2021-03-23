@@ -1,0 +1,6 @@
+FROM voip-autoprov-base
+MAINTAINER Jan Janak <janakj@cs.columbia.edu>
+
+EXPOSE 80
+VOLUME /data
+CMD ["python3.7", "-u", "http_server.py"]
